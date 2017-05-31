@@ -1,1 +1,2 @@
-未完成   数据库 不能连接
+改变编码  show variables like 'character_set_database';
+	 alter database xxx CHARACTER SET utf8;
