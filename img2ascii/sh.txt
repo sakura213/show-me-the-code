@@ -1,0 +1,21 @@
+
+file:///home/x8/autoproxy.pac
+
+
+
+
+
+
+②生成代理自动配置文件
+
+这里用到genpac，这是基于gfwlist的代理自动配置(Proxy Auto-config)文件生成工具，支持自定义规则。https://github.com/JinnLynn/genpac
+安装genpac
+sudo pip install genpac
+选择生成文件的存放位置，并进入
+cd /usr/local/lib/python2.7/dist-packages/shadowsocks
+执行下面命令
+sudo genpac --proxy="SOCKS5 127.0.0.1:6677" --gfwlist-proxy="SOCKS5 127.0.0.1:6677" -o autoproxy.pac --gfwlist-url="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"
+
+注意：
+报错后面的错误时，fetch gfwlist fail. online: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt local: None
+可以使用后面的语句：sudo genpac --proxy="SOCKS5 127.0.0.1:6677" -o autoproxy.pac --gfwlist-url="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"
